@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    APP_NAME: str = "Yoga Expert API"
+    APP_NAME: str = "Chatup"
     APP_ENV: str = "development"
     APP_PORT: int = 8000
 
