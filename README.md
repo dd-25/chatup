@@ -13,7 +13,7 @@ The long-term vision is to develop a **RAG (Retrieval-Augmented Generation) base
 ## 🚀 Getting Started
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/chatup.git
+git clone https://github.com/dd-25/chatup.git
 cd chatup
 
 # Install dependencies
