@@ -1,5 +1,5 @@
 [project]
-name = "yoga-expert"
+name = "chatup"
 version = "0.1.0"
 description = ""
 authors = [
@@ -13,10 +13,10 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "yoga_expert", from = "src"}]
+packages = [{include = "chatup", from = "src"}]
 
 [tool.poetry.scripts]
-dev = "yoga_expert.main:main"
+dev = "chatup.main:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

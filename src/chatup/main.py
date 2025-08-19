@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from yoga_expert.config import settings
-from yoga_expert.routes import health
+from chatup.config import settings
+from chatup.routes import health
 
 def create_app() -> FastAPI:
     app = FastAPI(
