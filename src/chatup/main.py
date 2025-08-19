@@ -4,14 +4,14 @@ from chatup.routes import health
 
 def create_app() -> FastAPI:
     app = FastAPI(
-        title="Yoga-Expert",
+        title=settings.APP_NAME,
         version="0.1.0",
         description="RAG-powered agentic chatbot"
     )
     
     @app.get("/")
     async def root():
-        return {"message": "Welcome to Yoga-Expert"}
+        return {"message": "Welcome to Chatup"}
     
     app.include_router(health.router, prefix="/health", tags=["Health"])
 
@@ -24,7 +24,7 @@ def main():
     import uvicorn
 
     uvicorn.run(
-        "yoga_expert.main:app",
+        "chatup.main:app",
         host="0.0.0.0",
         port=settings.APP_PORT,
         reload=True
