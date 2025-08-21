@@ -7,6 +7,10 @@ class Settings(BaseSettings):
     APP_PORT: int = 8000
 
     OPENAI_API_KEY: str
+    
+    PINECONE_API_KEY: str
+    PINECONE_ENV: str
+    PINECONE_INDEX_NAME: str
 
     model_config = SettingsConfigDict(
         env_file=".env",

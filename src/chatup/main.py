@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from chatup.config import settings
-from chatup.routes import health
+from chatup.routes import health, upload
 
 def create_app() -> FastAPI:
     app = FastAPI(
@@ -14,6 +14,7 @@ def create_app() -> FastAPI:
         return {"message": "Welcome to Chatup"}
     
     app.include_router(health.router, prefix="/health", tags=["Health"])
+    app.include_router(upload.router, prefix="/upload", tags=["Upload"])
 
     return app
 
