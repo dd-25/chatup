@@ -2,11 +2,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    APP_NAME: str = "Chatup"
     APP_ENV: str = "development"
     APP_PORT: int = 8000
 
     OPENAI_API_KEY: str
+    COHERE_API_KEY: str = ""  # Optional for reranking
     
     PINECONE_API_KEY: str
     PINECONE_ENV: str

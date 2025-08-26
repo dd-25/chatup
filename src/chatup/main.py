@@ -1,12 +1,19 @@
+import logging
 from fastapi import FastAPI
 from chatup.config import settings
-from chatup.routes import health, upload
+from chatup.routes import health, upload, query
+from chatup.constants import APP_SETTINGS
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(name)s %(message)s"
+)
 
 def create_app() -> FastAPI:
     app = FastAPI(
-        title=settings.APP_NAME,
-        version="0.1.0",
-        description="RAG-powered agentic chatbot"
+        title=APP_SETTINGS.APP_NAME,
+        version=APP_SETTINGS.VERSION,
+        description=APP_SETTINGS.DESCRIPTION
     )
     
     @app.get("/")
@@ -15,6 +22,7 @@ def create_app() -> FastAPI:
     
     app.include_router(health.router, prefix="/health", tags=["Health"])
     app.include_router(upload.router, prefix="/upload", tags=["Upload"])
+    app.include_router(query.router, prefix="/query", tags=["Query"])
 
     return app
 

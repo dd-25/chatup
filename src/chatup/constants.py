@@ -1,0 +1,36 @@
+class APP_SETTINGS:
+    APP_NAME = "ChatUp"
+    VERSION = "0.1.0"
+    DESCRIPTION = "RAG-powered agentic chatbot"
+    
+class EMBEDDING_SETTINGS:
+    EMBED_MODEL = "text-embedding-3-small"
+    TOKEN_EMBEDDING_SCHEME = 'cl100k_base'
+
+class CHUNKING_SETTINGS:
+    MAX_TOKENS = 800
+    OVERLAP_TOKENS = 80
+    
+class RETRIEVER_SETTINGS:
+    SIMILARITY_THRESHOLD = 0.2
+    MAX_TOKENS = 4000
+    KEYWORD_BOOST = 0.1
+    RERANK_FACTOR = 3
+    COHERE_RERANK_MODEL = "rerank-english-v3.0"
+    COHERE_TOP_N = 10
+
+class PINECONE_SETTINGS:
+    DIMENSION = 1536
+    TOP_K = 10
+
+class GENERATION_SETTINGS:
+    pass
+
+class UPLOAD_SETTINGS:
+    MAX_FILE_SIZE_MB = 50
+    DISK_THRESHOLD_MB = 10
+    STREAMING_CHUNK_SIZE_KB = 8
+    MAX_VECTORS_BATCH_SIZE_BYTES = 3_500_000
+    MAX_VECTORS_PER_BATCH = 100
+    MAX_CHUNK_SIZE_BYTES = 3_000_000
+    ALLOWED_FILE_TYPES = {'.pdf', '.docx', '.txt', '.json', '.csv', '.tsv'}
